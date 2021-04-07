@@ -1,0 +1,67 @@
+\documentclass[a4paper,11pt]{jsarticle}
+\usepackage{amsmath, amsfonts}
+\usepackage{bm}
+\usepackage[dvipdfmx]{graphicx}
+\begin{document}
+  \title{先端データ解析論　第一回小レポート}
+  \author{情報理工学系研究科電子情報学専攻M1 堀 紡希 48216444}
+  \date{\today}
+  \maketitle
+
+  \section*{宿題1}
+  \subsection*{A)}
+  p(X=好, Y=眠)=p(X=好)$\times$p(Y=眠|X=好)=$0.8\times 0.25 = 0.2$
+  \subsection*{B)}
+  p(Y=眠)=p(X=好, Y=眠)+p(X=嫌, Y=眠)=$0.8\times 0.25 + 0.2\times 0.25 = 0.25$
+
+  \subsection*{C)}
+  p(X=好| Y=眠)=p(X=好, Y=眠)/p(Y=眠)=$0.2/ 0.25 = 0.8$
+  \subsection*{D)}
+  p(X=好, Y=眠)=p(X=好)$\times$p(Y=眠)
+
+  などが成り立つので独立である.
+  \section*{宿題2}
+  定数$c$は確率$1$で$c$の値を取る確率変数である.
+  \subsection*{A)}
+  $E(c) = \sum _X cp(X) = c\sum _X p(X)= c\cdot 1 = c$
+  \subsection*{B)}
+  A)から, 
+  \begin{align*}
+  E(X)+c &= c + \sum_{X} Xp(X) \\
+  &= \sum_{X} (Xp(X) + cp(X)) \\
+  &= \sum_{X} (X+c)p(X) = E(X+c)
+  \end{align*}
+  \subsection*{C)}
+  A)から, 
+  \begin{align*}
+  cE(X) &= c  \sum_{X} Xp(X) \\
+  &= \sum_{X} cXp(X)  = E(cX)
+  \end{align*}
+
+  \section*{宿題3}
+  定義に従って計算すれば, 
+  \subsection*{A)}
+  $V(c) = E[c^2] - (E[c])^2 = c^2 - c^2 = 0$
+  \subsection*{B)}
+  $V(X+c) = E[(X+c)^2]-(E[X+c])^2 = (E[X^2] + 2cE[X] + c^2) - (E[X]+c)^2 = E[X]^2 - E[X^2] = V(X)$
+
+  \subsection*{C)}
+  $V(cX) = E[(cX)^2] - (E[cX])^2 = c^2E[X^2] - c^2 (E[X])^2 = c^2(E[X^2] - (E[X])^2) = c^2V(X)$
+  \section*{宿題4}
+
+  \subsection*{A)}
+  $E(X+X') = \sum _{x, x'} (x+x')p(x, x') = \sum _{x, x'} xp(x, x') + x'p(x+x') = \sum _x xp(x) + \sum _{x'}
+ x' p(x') = E[X]+E[X'] $
+
+ 3番目の等号ではそれぞれ$x, x'$について和を取っている
+  \subsection*{B)}
+  $\text{Cov}(X, X') = E[(X-E[X])(X'-E[X'])] = E[XX']-E[X]E[X']$
+  
+  であることを用いて, 
+  \begin{align*}
+  V(X+X') &= E[(X+X')^2] - (E[X+X'])^2 \\
+  &= E[X^2]-(E[X])^2 + E[X'^2]-(E[X'])^2 + 2(E[XX']-E[X]E[X'])\\
+  &=V(X)+V(X')+2\text{Cov}(X, X')
+  \end{align*}
+
+\end{document}
