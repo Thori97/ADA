@@ -1,0 +1,48 @@
+\documentclass[a4paper,11pt]{jsarticle}
+\usepackage{amsmath, amsfonts}
+\usepackage{bm}
+\usepackage[dvipdfmx]{graphicx}
+\begin{document}
+  \title{先端データ解析論　第2回小レポート}
+  \author{情報理工学系研究科電子情報学専攻M1 堀 紡希 48216444}
+  \date{\today}
+  \maketitle
+
+  \section*{宿題1}
+  ipynbファイルで別に出します．
+
+  \section*{宿題2}
+  $l_2$正則化回帰によってパラメータが以下のように表される．
+  \begin{equation}
+    \hat{\bm \theta}_i = ({\bm \Phi} ^\top _i
+    {\bm \Phi }_i + \lambda {\bm I})^{-1} 
+    {\bm \Phi }_i ^\top {\bm y}_i
+  \end{equation}
+
+  ただし，${\bm \Phi }_i$は$i$番目のデータを抜いた計画行列で，
+
+  \[{\bm \Phi }^\top{\bm \Phi } = \sum _j {\bm \phi}_j{\bm \phi}_j^\top\]
+
+  であるので，これは以下で表される．
+  \[ {\bm \Phi} ^\top _i
+  {\bm \Phi }_i = {\bm \Phi} ^\top 
+  {\bm \Phi } - {\bm \phi}_i{\bm \phi}_i^\top  \]
+
+  
+  また，以下が成り立つ．
+  \[{\bm \Phi }^\top {\bm y} -y_i \bm{\phi}_i = \sum _j {\bm \phi_j y_j} -y_i \bm{\phi}_i = {\bm \Phi}_i^\top y_i \]
+
+  以上と逆行列の公式から，
+
+  \begin{align*}
+    \hat{\bm \theta}_i &= ({\bm U} - {\bm \phi}_i{\bm \phi}_i^\top)^{-1} ({\bm \Phi}^\top{\bm y} - y_i {\bm \phi}_i )\\
+  \end{align*}
+
+  そして, 
+  \begin{align*}
+    {\bm \phi}_i^\top\hat{\bm \theta}_i &= {\bm \phi}_i^\top({\bm U} - {\bm \phi}_i{\bm \phi}_i^\top)^{-1} ({\bm \Phi}^\top{\bm y} - y_i {\bm \phi}_i )\\
+    &= {\bm \phi}_i^\top \left( U^{-1} + \frac{U^{-1} {\bm \phi}_i {\bm \phi}_i ^\top U^{-1}}{1-{\bm \phi}_i ^\top U ^{-1} {\bm \phi}_i} \right)({\bm \Phi}^\top{\bm y} - y_i {\bm \phi}_i )\\
+    &= \frac{{\bm \phi}_i ^\top U^{-1}({\bm \Phi}^\top {\bm y} - y_i {\bm \Phi}_i9)}{1-{\bm \phi}_i ^\top U ^{-1} {\bm \phi}_i}
+  \end{align*}
+
+\end{document}
