@@ -32,17 +32,35 @@
   また，以下が成り立つ．
   \[{\bm \Phi }^\top {\bm y} -y_i \bm{\phi}_i = \sum _j {\bm \phi_j y_j} -y_i \bm{\phi}_i = {\bm \Phi}_i^\top y_i \]
 
-  以上と逆行列の公式から，
+  以上から，
 
   \begin{align*}
     \hat{\bm \theta}_i &= ({\bm U} - {\bm \phi}_i{\bm \phi}_i^\top)^{-1} ({\bm \Phi}^\top{\bm y} - y_i {\bm \phi}_i )\\
   \end{align*}
 
-  そして, 
+  そして逆行列の公式から$y_i$の予測値を以下のように計算できる.
   \begin{align*}
     {\bm \phi}_i^\top\hat{\bm \theta}_i &= {\bm \phi}_i^\top({\bm U} - {\bm \phi}_i{\bm \phi}_i^\top)^{-1} ({\bm \Phi}^\top{\bm y} - y_i {\bm \phi}_i )\\
     &= {\bm \phi}_i^\top \left( U^{-1} + \frac{U^{-1} {\bm \phi}_i {\bm \phi}_i ^\top U^{-1}}{1-{\bm \phi}_i ^\top U ^{-1} {\bm \phi}_i} \right)({\bm \Phi}^\top{\bm y} - y_i {\bm \phi}_i )\\
-    &= \frac{{\bm \phi}_i ^\top U^{-1}({\bm \Phi}^\top {\bm y} - y_i {\bm \Phi}_i9)}{1-{\bm \phi}_i ^\top U ^{-1} {\bm \phi}_i}
+    &= \frac{{\bm \phi}_i ^\top U^{-1}({\bm \Phi}^\top {\bm y} - y_i {\bm \phi}_i)}{1-{\bm \phi}_i ^\top U ^{-1} {\bm \phi}_i}
   \end{align*}
 
+  ここで, 
+  \[ \tilde{\bm H} = \text{diag}(1-{\bm \phi}_0^\top U^{-1} {\bm \phi}_0, \, \dots, \, 1-{\bm \phi}_n^\top U^{-1} {\bm \phi}_n )\]
+
+  \[{\bm H}{\bm y} = {\bm y} - {\bm \Phi} U^{-1}{\bm \Phi}^\top{\bm y} \]
+
+  を用いると$\|\hat{\bm H}^{-1} {\bm H} {\bm y}\|^2/n$をノルムの計算によって以下のように計算できる.
+
+  \[ \frac{1}{n} \|\hat{\bm H}^{-1} {\bm H} {\bm y}\|^2 = \frac{1}{n} \sum _{i=1} ^{n} \left( \frac{-y_i + {\bm \phi}_i^\top U^{-1}{\bm \Phi}{\bm y}}{1-{\bm \phi}_i ^\top U ^{-1} {\bm \phi}_i} \right) ^2\]
+
+  一方で, 二乗誤差は, 
+  \begin{align*}
+    \frac{1}{n}\sum _{i=1}^{n} ({\bm \phi}_i^\top\hat{\bm \theta}_i - y_i) &= \frac{1}{n} \sum _{i=1} ^{n} \left( \frac{-y_i + {\bm \phi}_i^\top U^{-1}{\bm \Phi}{\bm y}}{1-{\bm \phi}_i ^\top U ^{-1} {\bm \phi}_i} \right) ^2
+  \end{align*}
+
+  であるので, 二乗誤差が, 
+  \[ \frac{1}{n} \|\hat{\bm H}^{-1} {\bm H} {\bm y}\|^2\]
+  であることが示された.
+  
 \end{document}

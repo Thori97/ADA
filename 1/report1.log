@@ -1,10 +1,9 @@
-This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.sjis) (TeX Live 2021/W32TeX) (preloaded format=platex 2021.4.10)  13 APR 2021 22:53
+This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.sjis) (TeX Live 2021/W32TeX) (preloaded format=platex 2021.4.10)  10 APR 2021 14:29
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/hori-/Desktop/ADA/2/2.tex
-(c:/Users/hori-/Desktop/ADA/2/2.tex
+**c:/Users/hori-/Desktop/ADA/1/report1
+(c:/Users/hori-/Desktop/ADA/1/report1.tex
 pLaTeX2e <2020-10-01>+2 (based on LaTeX2e <2020-10-01> patch level 4)
 L3 programming layer <2021-02-18> (c:/texlive/2021/texmf-dist/tex/platex/jsclasses/jsarticle.cls
 Document Class: jsarticle 2020/10/09 jsclasses (okumura, texjporg)
@@ -142,8 +141,9 @@ File: l3backend-dvips.def 2021-03-18 L3 backend support: dvips
 \g__pdf_backend_annotation_int=\count266
 \g__pdf_backend_link_int=\count267
 \g__pdf_backend_link_sf_int=\count268
-) (out/2.aux)
-\openout1 = `2.aux'.
+)
+No file report1.aux.
+\openout1 = `report1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
@@ -174,7 +174,7 @@ LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
 (Font)              scaled to size 5.76599pt on input line 9.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 9.
- (c:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
+(c:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 9.
@@ -195,31 +195,33 @@ LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
 (Font)              scaled to size 13.83836pt on input line 11.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 13.83836pt on input line 11.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 12.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 15.
+(Font)              scaled to size 6.72699pt on input line 13.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 4.805pt on input line 15.
+(Font)              scaled to size 4.805pt on input line 13.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 15.
+(Font)              scaled to size 9.60999pt on input line 13.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 15.
+(Font)              scaled to size 6.72699pt on input line 13.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 4.805pt on input line 15.
+(Font)              scaled to size 4.805pt on input line 13.
  [1
 
-]
+] [2]
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 49.
+(Font)              scaled to size 6.72699pt on input line 58.
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 4.805pt on input line 49.
- [2] (out/2.aux) ) 
+(Font)              scaled to size 4.805pt on input line 58.
+ [3] (./report1.aux) ) 
 Here is how much of TeX's memory you used:
- 1868 strings out of 479466
- 24858 string characters out of 5873881
- 329837 words of memory out of 5000000
- 19554 multiletter control sequences out of 15000+600000
- 422967 words of font info for 114 fonts, out of 8000000 for 9000
+ 1866 strings out of 479466
+ 24885 string characters out of 5873881
+ 328849 words of memory out of 5000000
+ 19555 multiletter control sequences out of 15000+600000
+ 423463 words of font info for 116 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 68i,10n,74p,278b,274s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,10n,74p,243b,260s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on out/2.dvi (2 pages, 5032 bytes).
+Output written on report1.dvi (3 pages, 4696 bytes).
