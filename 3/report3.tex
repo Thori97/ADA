@@ -1,0 +1,53 @@
+\documentclass[a4paper,11pt]{jsarticle}
+\usepackage{amsmath, amsfonts}
+\usepackage{bm}
+\usepackage[dvipdfmx]{graphicx}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+\begin{document}
+  \title{先端データ解析論　第3回小レポート}
+  \author{情報理工学系研究科電子情報学専攻M1 堀 紡希 48216444}
+  \date{\today}
+  \maketitle
+
+  \section*{宿題1}
+  \begin{itemize}
+    \item[$z\geq0$の場合]
+  \[\frac{\partial T}{\partial z} = \lambda - u + z - \theta\]
+
+  これが$0$になるのは, $\theta + u - \lambda \geq 0$のときで
+  $z = \theta + u - \lambda$で$T(z)$は最小になる.
+  $\theta + u - \lambda < 0$のときは$z=0$で最小である.
+
+    \item[$z\leq0$の場合]
+  \[\frac{\partial T}{\partial z} = -\lambda - u + z - \theta\]
+
+  これが$0$になるのは, $\theta + u + \lambda \leq 0$のときで
+  $z = \theta + u + \lambda$で$T(z)$は最小になる.
+  $\theta + u + \lambda > 0$のときは$z=0$で最小である.
+  
+  \item[$\forall z$]
+  について
+
+  $\theta + u$に注目して，
+  
+  \begin{enumerate}
+    \item $\theta + u > \lambda$のとき
+      
+      $\theta + u > -\lambda$も同時に満たされる. このとき, 前の結果から. $z\geq 0$では$z = \theta + u -\lambda$で最小, $z\leq 0$では$z=0$で最小になる
+      ので全体では$z = \theta + u - \lambda$で最小である.
+
+    \item $-\lambda \leq \theta + u \leq \lambda$のとき
+    
+      前の結果から$z\geq 0$では$z=0$で最小, $z\leq 0$では$z=0$で最小なので, 全体では$z=0$で最小である.
+
+    \item $\theta + u < -\lambda$のとき
+      
+      $\theta + u < \lambda$も同時に満たされる. このとき, 前の結果から. $z\leq 0$では$z = \theta + u + \lambda$で最小, $z\geq 0$では$z=0$で最小になる
+      ので全体では$z = \theta + u + \lambda$で最小である.
+  \end{enumerate}
+  以上から
+  \[\argmin _{z} T(z) = \max (0, \theta + u - \lambda ) + \min (0, \theta + u + \lambda) \]
+  \end{itemize}
+  \section*{宿題2}
+  別のipynbファイルで提出します.
+\end{document}
