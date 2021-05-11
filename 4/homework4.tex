@@ -1,0 +1,53 @@
+\documentclass[a4paper,11pt]{jsarticle}
+\usepackage{amsmath, amsfonts}
+\usepackage{bm}
+\usepackage[dvipdfmx]{graphicx}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+\begin{document}
+  \title{先端データ解析論　第4回小レポート}
+  \author{情報理工学系研究科電子情報学専攻M1 堀 紡希 48216444}
+  \date{\today}
+  \maketitle
+
+  \section*{宿題1}
+  \begin{align*}
+    J({\bm \theta}) &= \frac{1}{2} \sum _{i=1} ^n \widetilde{w}_i \left(f_{\bm \theta} ({\bm x}_i) -y_i\right)^2 \\
+    &= \frac{1}{2} ({\bm \Phi } {\bm \theta} - {\bm y} )^{\top} \widetilde{{\bm W}} ({\bm \Phi } {\bm \theta} - {\bm y} )
+  \end{align*}
+  を最小化する${\bm \theta}$を求めればよい．
+  ${\bm \theta}$で微分して, 
+  \begin{align*}
+    \frac{\partial J({\bm \theta})}{\partial {\bm \theta}} &= {\bm \Phi}^\top \widetilde{\bm W} {\bm \Phi} {\bm \theta} - \frac{1}{2}{\bm \Phi} \widetilde{\bm W}^\top {\bm y} - \frac{1}{2}{\bm \Phi} \widetilde{\bm W} {\bm y}\\
+    &= {\bm \Phi}^\top \widetilde{\bm W} {\bm \Phi} {\bm \theta} - {\bm \Phi} \widetilde{\bm W} {\bm y}
+  \end{align*}
+  ただし，以下の式を用いた．
+  \[ \frac{\partial}{\partial {\bm \theta}} {\bm \theta}^\top {\bm A} {\bm \theta} = 2{\bm A} {\bm \theta}, \frac{\partial}{\partial {\bm \theta}} {\bm b}^\top {\bm \theta} = {\bm b}, \widetilde{\bm W}^\top = \widetilde{\bm W} \]
+
+  よって二乗誤差の最小を与えるパラメータ$\hat{\bm \theta}$はこれが$0$になるときで，以下で与えられる．
+
+  \[ \hat{\bm \theta} = ( {\bm \Phi}^\top \widetilde{\bm W} {\bm \Phi} )^{-1} {\bm \Phi} \widetilde{\bm W} {\bm y}\]
+  
+  \section*{宿題2}
+
+  二次上界$\widetilde{\rho} (r) $ は定数$a, b, c$を用いて以下のように表すことができる．
+
+  \[ \widetilde{\rho} (r) = ar^2 + br + c \]
+
+  $\rho (r)$は対称であるので以下が成り立つ．
+  \[ \rho (\widetilde{r}) =  \rho (-\widetilde{r})\]
+
+  $\widetilde{\rho} (r) $は$(\widetilde{r}, \rho (\widetilde{r})), (-\widetilde{r}, \rho (\widetilde{r}))$を通るので,代入して
+
+  \[ b=0 \]
+
+  を得る．また，上の点で接するので一次微分係数が一致する．すなわち
+
+  \[ \rho ' (\widetilde{r}) = \widetilde{\rho} ' (\widetilde{r}) = 2a\widetilde{r} \]
+  が成り立ち，$a$は以下の様に求まる．
+  \[ a = \frac{\rho ' (\widetilde{r})}{2\widetilde{r}} \]
+
+  以上より，存在するなら二次上界は
+  \[ \widetilde{\rho} = \frac{\rho ' (\widetilde{r})}{2 \widetilde{r}}r^2 + \text{const}\]
+  \section*{宿題3}
+  別のipynbファイルで提出します.
+\end{document}

@@ -1,0 +1,51 @@
+\documentclass[a4paper,11pt]{jsarticle}
+\usepackage{amsmath, amsfonts}
+\usepackage{bm}
+\usepackage[dvipdfmx]{graphicx}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+\begin{document}
+  \title{先端データ解析論　第5回小レポート}
+  \author{情報理工学系研究科電子情報学専攻M1 堀 紡希 48216444}
+  \date{\today}
+  \maketitle
+
+  \section*{宿題1}
+  線形モデルでの最小二乗分類における計画行列が
+  \[X = \left( {\bm x}_1, \dots, {\bm x}_n \right) ^\top \]
+
+  であるので, 最小二乗分類による識別境界は
+
+  \[ \hat{\bm \theta} = ({\bm X}^\top {\bm X})^{-1} {\bm X}^{\top} {\bm y}  \]
+
+  である.
+  一方
+  \[ {\bm 0} = \frac{1}{n} \sum _{i=1} ^n {\bm x}_i 
+  = \frac{1}{n_+ + n_-}\left(\sum _{i:y_i=+1} x_i + \sum _{i:y_i=-1} x_i\right)
+  = \frac{1}{n_+ + n_-}(n_+ \hat{\bm \mu}_+ + n_- \hat{\bm \mu}_- )
+  \]
+  したがって$n_+ \hat{\bm \mu}_+ + n_- \hat{\bm \mu}_- = 0$が成り立つ.
+
+  また以下の関係式が成り立つ.
+  \begin{align*}
+     {\bm X}^\top{\bm y} &= (y_1 {\bm x}_1 + \dots + y_n {\bm x}_n)\\
+     &= n_+\hat{\bm \mu}_+ + n_-\hat{\bm \mu}_- = 2n_+\hat{\bm \mu}_+
+  \end{align*}
+
+  さらに
+  \begin{align*}
+    {\bm X}^\top {\bm X} &= ({\bm x}_1 {\bm x}_1^\top + \dots + {\bm x}_n {\bm x}_n^\top)\\
+  \end{align*}
+  \[ \hat{\bm \Sigma} = \frac{1}{n} \sum _{i=1}^n ({\bm x}_i - \hat{\mu})({\bm x}_i - \hat{\mu})^\top = \frac{1}{n} \sum _{i=1}^n {\bm x}_i {\bm x}_i ^\top\]
+  から, 
+  \[ {\bm X}^\top {\bm X} = (n_+ + n_-) \hat{\bm \Sigma} \]
+  が成り立つ.
+
+  以上から, 最小二乗分類の境界線は以下で表せる.
+  \[\hat{\bm \theta} = ({\bm X}^\top {\bm X})^{-1} {\bm X}^{\top} {\bm y} = \frac{2n_+}{n_+ + n_-} \hat{\bm \Sigma}^{-1} \hat{\bm \mu}_+ \]
+  
+  これはフィッシャー判別分析による識別境界, 
+  \[ \hat{\bm \Sigma}^{-1} (\hat{\bm \mu}_+ + \hat{\bm \mu}_-) = 2\hat{\bm \Sigma}^{-1} \hat{\bm \mu}_+\]
+  のスカラー倍$(=n_+ / (n_+ + n_-) \text{倍})$になっている.
+  \section*{宿題2}
+  別のipynbファイルで提出します.
+\end{document}
