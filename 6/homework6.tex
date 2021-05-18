@@ -1,0 +1,41 @@
+\documentclass[a4paper,11pt]{jsarticle}
+\usepackage{amsmath, amsfonts}
+\usepackage{bm}
+\usepackage[dvipdfmx]{graphicx}
+\newcommand{\ywx}{y_i{\bm w}^\top{\bm x}_i}
+\begin{document}
+  \title{先端データ解析論　第6回小レポート}
+  \author{情報理工学系研究科電子情報学専攻M1 堀 紡希 48216444}
+  \date{\today}
+  \maketitle
+
+  \section*{宿題1}
+  以下の式
+  \begin{enumerate}
+    \item $\alpha_i(\ywx-1+\xi_i)=0$
+    \item $\beta_i \xi_i = 0$
+    \item $\ywx -1 +\xi_i \geq 0$
+    \item $\xi_i \geq 0$
+    \item $\alpha _i + \beta _i = C$
+    \item $C \geq 0$
+  \end{enumerate}
+  が成り立つとした下で各性質を示す
+
+  \begin{enumerate}
+    \item $\alpha _i = 0$ならば, 5.から$\beta _i = C$なので2.,6.から$\xi_i=0$, 
+    よって$\ywx\geq1-\xi=1$となるので$\alpha_i=0\Rightarrow\ywx\geq0$が成り立つ.
+    \item $0<\alpha_i<C$ならば, 5.から$0<\beta_i<C$なので2.,6.から$\xi_i=0$となる.
+    1.から$\ywx -1+\xi_i=0$なので, $0<\alpha_i<C\Rightarrow\ywx=1-\xi_i=1$が成り立つ
+    \item $\alpha_i=C$ならば, 5.から$\beta_i=0$.このとき2., 4.から$\xi_i\geq 0$.
+    一方1.から$\ywx=1-\xi_i\leq1$となるので, $\alpha_i=C\Rightarrow \ywx\leq 1$が成り立つ.
+    \item $\ywx>1$ならば, $\ywx-1\geq 0$であるので, 4.から$\ywx -1 + \xi_i>0$.このとき1.から$\alpha_i=0$
+    したがって$\ywx > 1 \Rightarrow \alpha_i=0$が成り立つ.
+    \item $\ywx <1$ならば, $\alpha_i=0$を仮定すると, 5.から$\beta_i=C$が成立するので, 2., 5.から$\xi_i=0$が成り立つ.
+    このとき, $\ywx -1+\xi_i = \ywx -1 <0 $より, 1.の条件が成り立たないので$\alpha_i \neq 0$. したがって1.から$\ywx -1+\xi_i=0$.
+    したがって$\xi_i>0$が成り立つので, 2.から$\beta_i=0$.このとき5.から$\alpha_i=C$となる.
+    以上から$\ywx <1 \Rightarrow \alpha_i=C$が成り立つ.
+  \end{enumerate}
+
+  \section*{宿題2}
+  別のipynbファイルで提出します.
+\end{document}
