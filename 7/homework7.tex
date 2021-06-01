@@ -1,0 +1,27 @@
+\documentclass[a4paper,11pt]{jsarticle}
+\usepackage{amsmath, amsfonts}
+\usepackage{bm}
+\usepackage[dvipdfmx]{graphicx}
+\newcommand{\ywx}{y_i{\bm w}^\top{\bm x}_i}
+\begin{document}
+  \title{先端データ解析論　第7回小レポート}
+  \author{情報理工学系研究科電子情報学専攻M1 堀 紡希 48216444}
+  \date{\today}
+  \maketitle
+  \section*{宿題1}
+  別のipynbファイルで提出します.
+  \section*{宿題2}
+  $B_\tau(y)$の定義より, 
+  \begin{align*}
+    B_{\tau +1}(y^{(\tau +1)}) &= \sum _{y^{(\tau+2)}, \dots, y^{(m)} = 1} ^c \exp{\left( \sum _{k=\tau +3} ^m {\bm \zeta} ^\top {\bm \varphi}_i^{(k)} (y^{(k)} , y^{(k+1)}) + {\bm \zeta} ^{\top} {\bm \varphi} _{i} ^{(\tau +2)} (y^{(\tau +2)}, y^{(\tau +1)})\right)}\\
+    &= \sum _{y^{(\tau+2)}, \dots, y^{(m)} = 1} ^c \exp{\left( \sum _{k=\tau+2} ^m {\bm \zeta} ^\top {\bm \varphi}_i^{(k)}(y^{(k)}, y^{(k-1)}) \right)}
+  \end{align*}
+
+  と表されるから, 
+
+  \begin{align*}
+    B_\tau (y) &= \sum _{y^{(\tau+1)}=1}^c \sum ^c _{y^{(\tau+2)}, \dots, y^{(m)} = 1} \exp{\left( \sum _{k=\tau +2}^m {\bm \zeta}^\top {\bm \varphi}_i^{(k)} (y^{(k)}, y^{(k-1)})\right)} \times \exp{\left( {\bm \zeta} ^\top {\bm \varphi}_i^{(\tau+1)}(y^{(\tau+1)}, y) \right)}\\
+    &= \sum _{y^{(\tau+1)}=1}B_{\tau+1}(y^{(\tau+1)})\exp{\left( {\bm \zeta}^\top {\bm \varphi}_i ^{(\tau+1)}(y^{(\tau+1)}, y) \right)}
+  \end{align*}
+
+\end{document}
