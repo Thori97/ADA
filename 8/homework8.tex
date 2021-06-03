@@ -1,0 +1,46 @@
+\documentclass[a4paper,11pt]{jsarticle}
+\usepackage{amsmath, amsfonts}
+\usepackage{bm}
+\usepackage[dvipdfmx]{graphicx}
+\newcommand{\ywx}{y_i{\bm w}^\top{\bm x}_i}
+\begin{document}
+  \title{先端データ解析論　第8回小レポート}
+  \author{情報理工学系研究科電子情報学専攻M1 堀 紡希 48216444}
+  \date{\today}
+  \maketitle
+  \section*{宿題1}
+  別のipynbファイルで提出します.
+  \section*{宿題2}
+  \begin{align}
+    2{\mathbb E} _{{\bm x}' \sim p_\text{test}, {\bm x}\sim q_\pi} \|{\bm x}' - {\bm x}\| &= 
+    2{\mathbb E} _{{\bm x}' \sim p_\text{test}, {\bm x}\sim \pi p_\text{train} (x|y=+1)} \|{\bm x}' - {\bm x}\| +
+    2{\mathbb E} _{{\bm x}' \sim p_\text{test}, {\bm x}\sim (1-\pi)p_\text{train} (x|y=-1)} \|{\bm x}' - {\bm x}\| \notag \\
+    &= 2b_{+1}\pi + 2b_{-1}(1-\pi) \notag\\
+    &= 2(b_{+1}-b_{-1})\pi +2b_{-1} \notag\\
+    &= 2(b_{+1}-b_{-1})\pi + \text{Const}
+  \end{align}
+
+  \begin{align}
+    -{\mathbb E} _{x', \tilde{x}' \sim p_\text{test}} \|x'-\tilde{x}'\| = \text{Const} 
+  \end{align}
+
+  \begin{align}
+    {\mathbb E} _{x, \tilde{x} \sim q_\pi} \|x-\tilde{x}\|
+    &= {\mathbb E}_{x\sim \pi p_\text{train} (x|y=+1), \tilde{x} \sim \pi p_\text{train} (x|y=+1)}\|x-\tilde{x}\|\notag\\
+    &+ {\mathbb E}_{x\sim \pi p_\text{train} (x|y=+1), \tilde{x} \sim (1-\pi) p_\text{train} (x|y=-1)}\|x-\tilde{x}\|\notag\\
+    &+ {\mathbb E}_{x\sim (1-\pi) p_\text{train} (x|y=-1), \tilde{x} \sim \pi p_\text{train} (x|y=+1)}\|x-\tilde{x}\|\notag\\
+    &+ {\mathbb E}_{x\sim (1-\pi) p_\text{train} (x|y=-1), \tilde{x} \sim (1-\pi) p_\text{train} (x|y=-1)}\|x-\tilde{x}\|\notag\\
+    &= (A_{+1, +1}\pi^2) + (A_{+1, -1}\pi -A_{+1,-1}\pi^2)\notag\\
+    &+ (A_{-1, +1}\pi -A_{-1, +1}\pi^2) + (A_{-1, -1}-A_{-1, -1}2\pi + A_{-1, -1}\pi^2)\notag\\
+    &= (A_{+1,+1}-A_{+1,-1}-A_{-1,+1}+A_{+1,+1}\pi^2 + (A_{+1,+1}+A_{-1,+1}-2A_{-1, -1})\pi + \text{Const}
+  \end{align}
+
+  以上(1), (2), (3)から, 
+
+  \begin{equation}
+    J(\pi) = (2A_{+1,-1}-A_{+1,+1}-A_{-1,-1})\pi^2 -2(A_{+1,-1}-A_{-1,-1}-b_{+1}+b_{-1})\pi + \text{Const}
+  \end{equation}
+  \section*{宿題3}
+  別のipynbファイルで提出します.
+
+\end{document}
