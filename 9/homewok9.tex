@@ -1,0 +1,42 @@
+\documentclass[a4paper,11pt]{jsarticle}
+\usepackage{amsmath, amsfonts}
+\usepackage{bm}
+\usepackage[dvipdfmx]{graphicx}
+\newcommand{\ywx}{y_i{\bm w}^\top{\bm x}_i}
+\begin{document}
+  \title{先端データ解析論　第9回小レポート}
+  \author{情報理工学系研究科電子情報学専攻M1 堀 紡希 48216444}
+  \date{\today}
+  \maketitle
+  \section*{宿題1}
+  \begin{equation}
+    \sum _{i,i'=1} W_{i,i'}\|{\bm T}{\bm x}_i - {\bm T}{\bm x}_{i'}\|^2 = 2\text{tr} ({\bm T}{\bm X}{\bm L}{\bm X}^\top {\bm T}^\top)
+  \end{equation}
+  を示す. 左辺について以下の式が成り立つ.
+  \begin{align*}
+    &\sum _{i, i'=1} W_{i,i'} \|{\bm T} {\bm x}_i - {\bm T}{\bm x}_{i'}\|^2\\
+    &= \sum _{i, i'=1} W_{i,i'} ({\bm T}{\bm x}_i-{\bm T}{\bm x}_{i'})^\top ({\bm T}{\bm x}_i - {\bm T}{\bm x}_{i'})\\
+    &= \sum _{i, i'=1} W_{i,i'} ({\bm x}_i^\top {\bm T}^\top-{\bm x}_{i'}^\top{\bm T}^\top) ({\bm T}{\bm x}_i - {\bm T}{\bm x}_{i'})\\
+    &= \sum _{i, i'=1} W_{i,i'} ({\bm x}_i^\top {\bm T}^\top{\bm T}{\bm x}_i 
+    - {\bm x}_i^\top {\bm T}^\top{\bm T}{\bm x}_{i'}
+    - {\bm x}_{i'}^\top {\bm T}^\top{\bm T}{\bm x}_{i}
+    + {\bm x}_{i'}^\top {\bm T}^\top{\bm T}{\bm x}_{i'} 
+    )\\
+    &= 2\sum _{i, i'=1} W_{i, i}{\bm x}_{i}^\top {\bm T}^\top{\bm T} {\bm x}_{i} - 2\sum _{i, i'=1} W_{i, i'}{\bm x}_i^\top {\bm T}^\top{\bm T}{\bm x}_{i'}\\
+    &= 2\sum _{i=1} D_{i, i}{\bm x}_i^\top {\bm T}^\top{\bm T} {\bm x}_{i} - 2\sum _{i, i'=1} W_{i, i'}{\bm x}_i^\top {\bm T}^\top{\bm T}{\bm x}_{i'}\\
+    &= 2\sum _{i, i'=1} D_{i, i'}{\bm x}_i^\top {\bm T}^\top{\bm T} {\bm x}_{i'} - 2\sum _{i, i'=1} W_{i, i'}{\bm x}_i^\top {\bm T}^\top{\bm T}{\bm x}_{i'}\\
+    &= 2\sum _{i, i'=1} L_{i, i'} {\bm x}_i^\top {\bm T}^\top {\bm T} {\bm x}_{i'}
+  \end{align*}
+
+  また, 右辺は以下のように表示できる.
+  \begin{align*}
+    \text{tr}({\bm T}{\bm X}{\bm L}{\bm X}^\top{\bm T}^\top) &= \text{tr}({\bm L}({\bm T}{\bm X})({\bm X}^\top{\bm T}^\top))\\
+    &= \text{tr}({\bm L}({\bm X}^\top{\bm T}^\top{\bm T}{\bm X})^\top)\\
+    &= \sum _{i, i'=1}L_{i,i'}{\bm x}_{i}^\top{\bm T}^\top {\bm T}{\bm x}_{i'}
+  \end{align*}
+  以上より(1)式が成り立つ.
+
+  \section*{宿題2}
+  別のipynbファイルで提出します.
+
+\end{document}
