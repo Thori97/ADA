@@ -1,0 +1,40 @@
+\documentclass[a4paper,11pt]{jsarticle}
+\usepackage{amsmath, amsfonts}
+\usepackage{bm}
+\usepackage[dvipdfmx]{graphicx}
+\newcommand{\ywx}{y_i{\bm w}^\top{\bm x}_i}
+\begin{document}
+  \title{先端データ解析論　第10回小レポート}
+  \author{情報理工学系研究科電子情報学専攻M1 堀 紡希 48216444}
+  \date{\today}
+  \maketitle
+  \section*{宿題1}
+  別のipynbファイルで提出します.
+
+  \section*{宿題2}
+  \subsection*{クラス内}
+  \begin{align*}
+    {\bm S}^{(w)} &= \sum _{y=1}^c \sum _{i:y_i=y} ({\bm x}_i -{\bm \mu}_y)({\bm x}_i -{\bm \mu}_y)^\top\\
+    &= \sum _{y=1}^c \sum _{i:y_i=y} ({\bm x}_i -\frac{1}{n_y}\sum _{i':y_{i'}=y} {\bm x}_{i'})({\bm x}_i -\frac{1}{n_y}\sum _{i':y_{i'}=y} {\bm x}_{i'})^\top\\
+    &= \frac{1}{2}\sum _{y=1}^c \sum _{i, i': y_i=y_{i'}=y}(\frac{1}{n_y}{\bm x}_i - \frac{1}{n_y}{\bm x}_{i'})(\frac{1}{n_y}{\bm x}_i - \frac{1}{n_y}{\bm x}_{i'})^\top\\
+    &= \frac{1}{2} \sum _{i,i'=1}^n Q_{i, i'}^{(w)}({\bm x}_i -{\bm x}_{i'})({\bm x}_i -{\bm x}_{i'})^\top
+  \end{align*}
+
+  より示された. 二行目から三行目で各要素についての和をそれぞれのindex順に取り直している.
+  $i$と$i'$の組み合わせは二度計算されるので$1/2$倍する必要がある.
+  \subsection*{クラス間}
+  散布行列は, 中心化の仮定から得られる
+  \[ \sum _{i=1} ^n {\bm x}_i\sum _{i'=1}^n{\bm x}_{i'}^\top = {\bm 0}\]
+  を用いると以下のように表せる.
+  \begin{align*}
+    {\bm C} &= \sum _{i=1}^n {\bm x}_i{\bm x}_{i'}^\top\\
+    &= \frac{1}{2} \sum _{i,i'=1}^n \frac{1}{n}({\bm x}_{i}{\bm x}_{i}^\top + {\bm x}_{i}{\bm x}_{i}^\top)\\
+    &= \frac{1}{2} \sum _{i,i'=1}^n \frac{1}{n}({\bm x}_i - {\bm x}_{i'})({\bm x}_i - {\bm x}_{i'})^\top
+  \end{align*}
+
+  クラス内の結果と, ${\bm S}^{(b)} = {\bm C} - {\bm S}^{(w)}$を用いると, 
+  \begin{equation*}
+    {\bm S}^{(b)} = \frac{1}{2}\sum _{i,i'=1}^n Q_{i, i'}^{(b)} ({\bm x}_i-{\bm x}_{i'})({\bm x}_i-{\bm x}_{i'})^\top
+  \end{equation*}
+  となる.
+\end{document}
